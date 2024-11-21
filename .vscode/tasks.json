@@ -3,7 +3,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\Users\\ktessier0001\\Downloads\\msys\\ucrt64\\bin\\g++.exe",
+            "command": "C:\\devkitPro\\msys2\\usr\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -26,7 +26,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: OmniBrew Build",
-            "command": "\"C:\\Users\\ktessier0001\\OneDrive - Los Angeles Unified School District\\Documents\\C++\\Tests\\build.bat\"",
+            "command": "\"E:\\downloads\\C++\\OmniBrew\\build.bat\"",
             "args": [
             ],
             "group": {

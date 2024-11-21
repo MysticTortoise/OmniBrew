@@ -2,8 +2,9 @@
 cls
 mkdir build
 cd build
-cmake .. -G "MinGW Makefiles"
+cmake ..
 cmake --build .
 
+cd Debug
 OmniBrew
 cd ..
