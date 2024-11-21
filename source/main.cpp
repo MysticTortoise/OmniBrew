@@ -1,6 +1,6 @@
-#include "MultiEngine/MultiEngine.hpp"
+#include "OmniBrew/OmniBrew.hpp"
 
 int main(){
-    MultiEngine::Main();
+    OmniBrew::Main();
     return 0;
 }

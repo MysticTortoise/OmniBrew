@@ -1,9 +1,9 @@
 #pragma once
 
-#include "MultiEngine/Cores/SystemCore/SystemCore.hpp"
-#include "MultiEngine/PlatformIncludes/OpenGL.hpp"
+#include "OmniBrew/Cores/SystemCore/SystemCore.hpp"
+#include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
-namespace MultiEngine::Core::SystemCore
+namespace OmniBrew::Core::SystemCore
 {
     extern GLFWwindow* window;
 }

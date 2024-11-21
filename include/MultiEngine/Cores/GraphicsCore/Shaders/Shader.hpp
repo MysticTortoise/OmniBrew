@@ -1,9 +1,9 @@
 #pragma once
 
-#include "MultiEngine/Math/Vector2.hpp"
-#include "MultiEngine/Math/Vector3.hpp"
+#include "OmniBrew/Math/Vector2.hpp"
+#include "OmniBrew/Math/Vector3.hpp"
 
-namespace MultiEngine::Core::GraphicsCore{
+namespace OmniBrew::Core::GraphicsCore{
     class Shader{
         void setParameter(const char* parameterName, bool value);
         void setParameter(const char* parameterName, int value);

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace MultiEngine::Core::GraphicsCore
+namespace OmniBrew::Core::GraphicsCore
 {
     int Initialize();
     void DeInitialize();

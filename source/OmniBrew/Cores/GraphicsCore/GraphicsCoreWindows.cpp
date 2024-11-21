@@ -1,10 +1,10 @@
 #ifdef ME_PLATFORM_WINDOWS
-#include "MultiEngine/Cores/GraphicsCore/GraphicsCoreWindows.hpp"
-#include "MultiEngine/Cores/SystemCore/SystemCoreWindows.hpp"
+#include "OmniBrew/Cores/GraphicsCore/GraphicsCoreWindows.hpp"
+#include "OmniBrew/Cores/SystemCore/SystemCoreWindows.hpp"
 
-#include "MultiEngine/PlatformIncludes/OpenGL.hpp"
+#include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
-using namespace MultiEngine::Core;
+using namespace OmniBrew::Core;
 using namespace GraphicsCore;
 
 void FramebufferSizeCallback(GLFWwindow* window, int width, int height){

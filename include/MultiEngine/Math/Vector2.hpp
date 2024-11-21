@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MultiEngine/Math/MathMacros.hpp"
+#include "OmniBrew/Math/MathMacros.hpp"
 
-namespace MultiEngine::Math{
+namespace OmniBrew::Math{
     class Vector2{
         public:
         float x = 0;

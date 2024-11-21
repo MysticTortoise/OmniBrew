@@ -1,6 +1,6 @@
 #pragma once
 
-namespace MultiEngine::Core::SystemCore
+namespace OmniBrew::Core::SystemCore
 {
     extern bool isRunning;
     int Initialize();

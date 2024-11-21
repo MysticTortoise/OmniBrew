@@ -1,13 +1,13 @@
 #ifdef ME_PLATFORM_WINDOWS
 
-#include "MultiEngine/Cores/GraphicsCore/Shaders/ShaderFactory.hpp"
-#include "MultiEngine/Cores/GraphicsCore/Shaders/Shader.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Shaders/ShaderFactory.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Shaders/Shader.hpp"
 
-#include "MultiEngine/Cores/GraphicsCore/Shaders/ShaderWindows.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Shaders/ShaderWindows.hpp"
 
-#include "MultiEngine/PlatformIncludes/OpenGL.hpp"
+#include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
-using namespace MultiEngine::Core::GraphicsCore;
+using namespace OmniBrew::Core::GraphicsCore;
 
 
 Shader* ShaderFactory::CreateProgrammableFromCode(const char* vertexShaderSource, const char* fragmentShaderSource){

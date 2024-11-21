@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(MultiEngine)
+project(OmniBrew)
 
 set(includeDirectories 
 ./include
@@ -13,8 +13,8 @@ file(GLOB_RECURSE libsources libraries/sources/*.c*)
 
 add_compile_definitions(ME_PLATFORM_WINDOWS)
 
-add_executable(MultiEngine ${sources} ${includes} ${libsources})
+add_executable(OmniBrew ${sources} ${includes} ${libsources})
 
-target_include_directories(MultiEngine PRIVATE ${includeDirectories})
+target_include_directories(OmniBrew PRIVATE ${includeDirectories})
 
-target_link_libraries(MultiEngine ${CMAKE_SOURCE_DIR}/libraries/libs/GLFW/libglfw3.a)
+target_link_libraries(OmniBrew ${CMAKE_SOURCE_DIR}/libraries/libs/GLFW/libglfw3.a)

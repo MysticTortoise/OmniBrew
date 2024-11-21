@@ -1,10 +1,10 @@
-#include "MultiEngine/InfoMacros.hpp"
+#include "OmniBrew/InfoMacros.hpp"
 #ifdef ME_PLATFORM_WINDOWS
 
-#include "MultiEngine/Cores/SystemCore/SystemCoreWindows.hpp"
-#include "MultiEngine/PlatformIncludes/OpenGL.hpp"
+#include "OmniBrew/Cores/SystemCore/SystemCoreWindows.hpp"
+#include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
-using namespace MultiEngine::Core;
+using namespace OmniBrew::Core;
 using namespace SystemCore;
 
 GLFWwindow* SystemCore::window = nullptr;
@@ -15,7 +15,7 @@ int SystemCore::Initialize(){
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    window = glfwCreateWindow(800,600, "MultiEngine", NULL, NULL);
+    window = glfwCreateWindow(800,600, "OmniBrew", NULL, NULL);
     if(window == NULL){
         ERROR("Failed to create GLFW window!");
         return -1;

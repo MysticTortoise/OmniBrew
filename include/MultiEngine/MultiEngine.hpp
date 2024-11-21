@@ -1,6 +1,6 @@
 #pragma once
 
-namespace MultiEngine
+namespace OmniBrew
 {
         void Main();
 

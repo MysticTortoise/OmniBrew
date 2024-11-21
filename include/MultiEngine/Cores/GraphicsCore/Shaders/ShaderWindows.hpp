@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MultiEngine/Cores/GraphicsCore/Shaders/Shader.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Shaders/Shader.hpp"
 
-namespace MultiEngine::Core::GraphicsCore{
+namespace OmniBrew::Core::GraphicsCore{
     class ShaderWindows : public Shader{
         public:
 

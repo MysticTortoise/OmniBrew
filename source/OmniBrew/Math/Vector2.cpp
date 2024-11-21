@@ -1,7 +1,7 @@
-#include "MultiEngine/Math/Vector2.hpp"
-#include "MultiEngine/Math/MathMacros.hpp"
+#include "OmniBrew/Math/Vector2.hpp"
+#include "OmniBrew/Math/MathMacros.hpp"
 
-using namespace MultiEngine::Math;
+using namespace OmniBrew::Math;
 
 
 Vector2::Vector2(float x, float y): x(x), y(y) {}

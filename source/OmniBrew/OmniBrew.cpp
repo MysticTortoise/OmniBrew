@@ -1,13 +1,13 @@
-#include "MultiEngine/MultiEngine.hpp"
+#include "OmniBrew/OmniBrew.hpp"
 
-#include "MultiEngine/Cores/SystemCore/SystemCore.hpp"
-#include "MultiEngine/Cores/GraphicsCore/GraphicsCore.hpp"
+#include "OmniBrew/Cores/SystemCore/SystemCore.hpp"
+#include "OmniBrew/Cores/GraphicsCore/GraphicsCore.hpp"
 
-using namespace MultiEngine;
-using namespace MultiEngine::Core;
+using namespace OmniBrew;
+using namespace OmniBrew::Core;
 
 
-void MultiEngine::Main(){
+void OmniBrew::Main(){
     if(SystemCore::Initialize() < 0)
     {
         goto systemCoreLabel;

@@ -5,5 +5,5 @@ cd build
 cmake .. -G "MinGW Makefiles"
 cmake --build .
 
-MultiEngine
+OmniBrew
 cd ..

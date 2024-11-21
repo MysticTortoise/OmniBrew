@@ -25,7 +25,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: MultiEngine Build",
+            "label": "C/C++: OmniBrew Build",
             "command": "\"C:\\Users\\ktessier0001\\OneDrive - Los Angeles Unified School District\\Documents\\C++\\Tests\\build.bat\"",
             "args": [
             ],

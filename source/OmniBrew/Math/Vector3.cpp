@@ -1,7 +1,7 @@
-#include "MultiEngine/Math/Vector3.hpp"
-#include "MultiEngine/Math/MathMacros.hpp"
+#include "OmniBrew/Math/Vector3.hpp"
+#include "OmniBrew/Math/MathMacros.hpp"
 
-using namespace MultiEngine::Math;
+using namespace OmniBrew::Math;
 
 
 Vector3::Vector3(float x, float y, float z): x(x), y(y), z(z) {}
