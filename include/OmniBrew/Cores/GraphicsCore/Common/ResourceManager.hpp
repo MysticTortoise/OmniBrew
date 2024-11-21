@@ -4,10 +4,15 @@
 
 #include <vector>
 
-#define RES_SHADERLIST_INDEX_TYPE byte
+#define OB_SHADER_LIMIT 255
 
 namespace OmniBrew::Core::GraphicsCore::ResourceManager{
-    extern Shader* shaders[255];
+    // Shaders
+    extern Shader* allocatedShaders[OB_SHADER_LIMIT];
+    extern int freeShaderPointer;
+
+    void AllocateAsset(Shader* shader);
+    void RemoveShader(Shader* shader);
 
     void CleanAllResources();
 }
