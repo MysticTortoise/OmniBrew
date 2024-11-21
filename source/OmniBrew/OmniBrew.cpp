@@ -1,7 +1,7 @@
 #include "OmniBrew/OmniBrew.hpp"
 
-#include "OmniBrew/Cores/SystemCore/SystemCore.hpp"
-#include "OmniBrew/Cores/GraphicsCore/GraphicsCore.hpp"
+#include "OmniBrew/Cores/SystemCore/Common/SystemCore.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Common/GraphicsCore.hpp"
 
 using namespace OmniBrew;
 using namespace OmniBrew::Core;

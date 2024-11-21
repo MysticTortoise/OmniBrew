@@ -1,4 +1,4 @@
-#include "OmniBrew/Cores/GraphicsCore/Shaders/ShaderWindows.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Windows/Shaders/ShaderWindows.hpp"
 
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 

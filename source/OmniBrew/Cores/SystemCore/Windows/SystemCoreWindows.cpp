@@ -1,7 +1,7 @@
 #include "OmniBrew/InfoMacros.hpp"
 #ifdef ME_PLATFORM_WINDOWS
 
-#include "OmniBrew/Cores/SystemCore/SystemCoreWindows.hpp"
+#include "OmniBrew/Cores/SystemCore/Windows/SystemCoreWindows.hpp"
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
 using namespace OmniBrew::Core;

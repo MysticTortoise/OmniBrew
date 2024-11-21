@@ -1,4 +1,4 @@
-#include "OmniBrew/Cores/SystemCore/SystemCore.hpp"
+#include "OmniBrew/Cores/SystemCore/Common/SystemCore.hpp"
 
 using namespace OmniBrew::Core;
 

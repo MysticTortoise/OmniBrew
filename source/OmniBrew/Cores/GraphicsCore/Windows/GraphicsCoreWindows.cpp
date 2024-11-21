@@ -1,6 +1,6 @@
 #ifdef ME_PLATFORM_WINDOWS
-#include "OmniBrew/Cores/GraphicsCore/GraphicsCoreWindows.hpp"
-#include "OmniBrew/Cores/SystemCore/SystemCoreWindows.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Windows/GraphicsCoreWindows.hpp"
+#include "OmniBrew/Cores/SystemCore/Windows/SystemCoreWindows.hpp"
 
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 

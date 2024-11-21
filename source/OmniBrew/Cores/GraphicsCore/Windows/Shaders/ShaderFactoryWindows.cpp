@@ -1,9 +1,9 @@
 #ifdef ME_PLATFORM_WINDOWS
 
-#include "OmniBrew/Cores/GraphicsCore/Shaders/ShaderFactory.hpp"
-#include "OmniBrew/Cores/GraphicsCore/Shaders/Shader.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Common/Shaders/ShaderFactory.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Common/Shaders/Shader.hpp"
 
-#include "OmniBrew/Cores/GraphicsCore/Shaders/ShaderWindows.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Windows/Shaders/ShaderWindows.hpp"
 
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
