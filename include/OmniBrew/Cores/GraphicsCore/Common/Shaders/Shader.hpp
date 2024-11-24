@@ -3,6 +3,7 @@
 #include "OmniBrew/Math/Vector2.hpp"
 #include "OmniBrew/Math/Vector3.hpp"
 
+
 namespace OmniBrew::Core::GraphicsCore{
     class Shader{
         void setParameter(const char* parameterName, bool value);
