@@ -2,6 +2,9 @@
 #include "OmniBrew/Cores/GraphicsCore/Windows/GraphicsCoreWindows.hpp"
 #include "OmniBrew/Cores/SystemCore/Windows/SystemCoreWindows.hpp"
 
+#include "OmniBrew/Cores/GraphicsCore/Common/Shaders/ShaderFactory.hpp"
+#include "OmniBrew/Cores/GraphicsCore/Common/ResourceManager.hpp"
+
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
 using namespace OmniBrew::Core;
@@ -38,7 +41,7 @@ const char *fragmentShaderSource = "#version 330 core\n"
 
 unsigned int VAO;
 unsigned int EBO;
-unsigned int shaderProgram;
+Shader* shader;
 
 int GraphicsCore::Initialize(){
     glfwSetFramebufferSizeCallback(SystemCore::window, FramebufferSizeCallback);
@@ -53,26 +56,8 @@ int GraphicsCore::Initialize(){
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    unsigned int vertexShader;
-    vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
-
-    unsigned int fragmentShader;
-    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-
-    shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    glUseProgram(shaderProgram);
-    
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
-    glUseProgram(shaderProgram);
+    shader = GraphicsCore::ShaderFactory::CreateProgrammableFromCode(vertexShaderSource, fragmentShaderSource);
+    shader->use();
 
     glGenVertexArrays(1, &VAO);
 
@@ -89,7 +74,7 @@ int GraphicsCore::Initialize(){
 
 void GraphicsCore::DeInitialize(){
     glDeleteVertexArrays(1, &VAO);
-    glDeleteProgram(shaderProgram);
+    ResourceManager::CleanAllAssets();
 }
 
 
@@ -97,7 +82,7 @@ void GraphicsCore::Update(){
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    glUseProgram(shaderProgram);
+    shader->use();
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);

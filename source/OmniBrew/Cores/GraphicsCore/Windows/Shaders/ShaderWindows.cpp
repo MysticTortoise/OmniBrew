@@ -4,7 +4,10 @@
 
 using namespace OmniBrew::Core::GraphicsCore;
 
-/*
-void ShaderWindows::use(){
-    glUseProgram(ID);
-}*/
+void Shader::use(){
+    glUseProgram(((ShaderWindows*)this)->ID);
+}
+
+ShaderWindows::~ShaderWindows(){
+    glDeleteProgram(this->ID);
+}

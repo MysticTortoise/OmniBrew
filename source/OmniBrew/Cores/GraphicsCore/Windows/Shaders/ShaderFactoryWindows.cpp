@@ -5,6 +5,8 @@
 
 #include "OmniBrew/Cores/GraphicsCore/Windows/Shaders/ShaderWindows.hpp"
 
+#include "OmniBrew/Cores/GraphicsCore/Common/ResourceManager.hpp"
+
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
 
 using namespace OmniBrew::Core::GraphicsCore;
@@ -30,6 +32,8 @@ Shader* ShaderFactory::CreateProgrammableFromCode(const char* vertexShaderSource
     ShaderWindows* shader = new ShaderWindows();
 
     shader->ID = shaderProgram;
+    ResourceManager::shaderList.push_back(shader);
+
     return shader;
 }
 #endif

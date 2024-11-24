@@ -8,5 +8,7 @@ namespace OmniBrew::Core::GraphicsCore{
 
         unsigned int ID;
 
+
+        ~ShaderWindows();
     };
 }
