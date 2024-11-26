@@ -1,6 +1,6 @@
-#ifdef ME_PLATFORM_WINDOWS
-#include "OmniBrew/Cores/GraphicsCore/Windows/GraphicsCoreWindows.hpp"
-#include "OmniBrew/Cores/SystemCore/Windows/SystemCoreWindows.hpp"
+#ifdef OB_PLATFORM_WINDOWS
+#include "OmniBrew/Cores/GraphicsCore/WindowsGL/GraphicsCoreWindows.hpp"
+#include "OmniBrew/Cores/SystemCore/WindowsGL/SystemCoreWindows.hpp"
 
 #include "OmniBrew/Cores/GraphicsCore/Common/Shaders/ShaderFactory.hpp"
 #include "OmniBrew/Cores/GraphicsCore/Common/ResourceManager.hpp"
@@ -25,18 +25,6 @@ unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
     1, 2, 3    // second triangle
 };  
-const char *vertexShaderSource = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "}\0";
-const char *fragmentShaderSource = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = vec4(1.0f,0.5f,0.2f,1.0f);\n"
-    "}\0";
 
 
 unsigned int VAO;
@@ -56,7 +44,7 @@ int GraphicsCore::Initialize(){
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    shader = GraphicsCore::ShaderFactory::CreateProgrammableFromCode(vertexShaderSource, fragmentShaderSource);
+    shader = GraphicsCore::ShaderFactory::CreateProgrammableFromFile("Shaders/testShader.vert", "Shaders/testShader.frag");
     shader->use();
 
     glGenVertexArrays(1, &VAO);

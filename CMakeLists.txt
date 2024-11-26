@@ -20,7 +20,7 @@ set(includeDirectories ./include)
 file(GLOB_RECURSE sources source/*.cpp)
 file(GLOB_RECURSE includes ${includeDirectories} *.hpp *.h)
 
-add_compile_definitions(ME_PLATFORM_WINDOWS)
+add_compile_definitions(OB_PLATFORM_WINDOWS OB_DEBUG OB_WORK_ENV)
 
 add_executable(OmniBrew ${sources} ${includes} ${libsources})
 

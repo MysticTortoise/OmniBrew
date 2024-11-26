@@ -1,7 +1,11 @@
 #pragma once
 
+#include "OmniBrew/Cores/CoreEnums.hpp"
+
 namespace OmniBrew
 {
-        void Main();
-
+    CoreType Initialize();
+    void Tick();
+    void DeInitialize(CoreType failedCore);
+    void Main();
 }

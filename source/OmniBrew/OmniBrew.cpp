@@ -2,26 +2,51 @@
 
 #include "OmniBrew/Cores/SystemCore/Common/SystemCore.hpp"
 #include "OmniBrew/Cores/GraphicsCore/Common/GraphicsCore.hpp"
+#include "OmniBrew/Cores/AssetCore/Common/AssetCore.hpp"
 
 using namespace OmniBrew;
 using namespace OmniBrew::Core;
 
+CoreType OmniBrew::Initialize() {
+    if (SystemCore::Initialize() < 0)
+        return SystemCoreType;
+    if (GraphicsCore::Initialize() < 0)
+        return GraphicsCoreType;
+    if (AssetCore::Initialize() < 0)
+        return AssetCoreType;
+
+    return NoCoreType;
+}
+
+void OmniBrew::Tick() {
+    SystemCore::Update();
+    GraphicsCore::Update();
+}
+
+void OmniBrew::DeInitialize(CoreType failedCore) {
+    switch (failedCore) {
+    case AssetCoreType:
+        GraphicsCore::DeInitialize();
+        [[fallthrough]];
+
+    case GraphicsCoreType:
+        SystemCore::DeInitialize();
+        [[fallthrough]];
+
+    case SystemCoreType:
+    default:
+        break;
+    }
+}
+
 
 void OmniBrew::Main(){
-    if(SystemCore::Initialize() < 0)
-    {
-        goto systemCoreLabel;
-    }
-    if(GraphicsCore::Initialize() < 0){
-        goto graphicsCoreLabel;
-    }
+    CoreType failedCore = Initialize();
 
-    while(SystemCore::isRunning){
-        SystemCore::Update();
-        GraphicsCore::Update();
+    if (failedCore == NoCoreType) {
+        while (SystemCore::isRunning) {
+            Tick();
+        }
     }
-graphicsCoreLabel:
-    GraphicsCore::DeInitialize();
-systemCoreLabel:
-    SystemCore::DeInitialize();
+    DeInitialize(failedCore);
 }
