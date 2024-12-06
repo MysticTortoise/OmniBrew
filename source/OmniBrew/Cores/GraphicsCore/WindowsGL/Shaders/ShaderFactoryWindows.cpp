@@ -48,9 +48,8 @@ Shader* ShaderFactory::CreateProgrammableFromCode(const char* vertexShaderSource
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    ShaderWindows* shader = new ShaderWindows();
+    ShaderWindows* shader = new ShaderWindows(shaderProgram);
 
-    shader->ID = shaderProgram;
     ResourceManager::shaderList.push_back(shader);
 
     return shader;
@@ -58,7 +57,6 @@ Shader* ShaderFactory::CreateProgrammableFromCode(const char* vertexShaderSource
 
 Shader* ShaderFactory::CreateProgrammableFromFile(const std::string vertexShaderPath, const std::string fragmentShaderPath) {
     const char* vertexShaderCode = AssetCore::GetBytesFromFile(vertexShaderPath);
-    PRINT(vertexShaderCode);
     const char* fragmentShaderCode = AssetCore::GetBytesFromFile(fragmentShaderPath);
     return CreateProgrammableFromCode(vertexShaderCode, fragmentShaderCode);
 }

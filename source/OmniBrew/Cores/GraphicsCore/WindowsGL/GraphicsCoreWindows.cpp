@@ -5,7 +5,10 @@
 #include "OmniBrew/Cores/GraphicsCore/Common/Shaders/ShaderFactory.hpp"
 #include "OmniBrew/Cores/GraphicsCore/Common/ResourceManager.hpp"
 
+#include "OmniBrew/Math/Color.hpp"
+
 #include "OmniBrew/PlatformIncludes/OpenGL.hpp"
+#include "OmniBrew/InfoMacros.hpp"
 
 using namespace OmniBrew::Core;
 using namespace GraphicsCore;
@@ -69,6 +72,10 @@ void GraphicsCore::DeInitialize(){
 void GraphicsCore::Update(){
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+
+    float timeValue = glfwGetTime();
+    float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+    shader->setParameter("ourColor", Math::Color(0.0f, greenValue, 0.0f, 1.0f));
 
     shader->use();
     glBindVertexArray(VAO);
