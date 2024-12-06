@@ -2,6 +2,7 @@
 
 namespace OmniBrew::Core::GraphicsCore::ResourceManager{
     std::vector<Shader*> shaderList = std::vector<Shader*>();
+    std::vector<Mesh*> meshList = std::vector<Mesh*>();
 
     template<typename T>
     inline void CleanVectorOfPointers(std::vector<T*>* vec){
@@ -12,5 +13,6 @@ namespace OmniBrew::Core::GraphicsCore::ResourceManager{
     }
     void CleanAllAssets(){
         CleanVectorOfPointers<Shader>(&shaderList);
+        CleanVectorOfPointers<Mesh>(&meshList);
     }
 }
